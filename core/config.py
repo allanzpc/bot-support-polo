@@ -24,7 +24,7 @@ class ConfigManager:
 
     public_keys = {
         # activity
-        "twitch_url": "https://www.twitch.tv/discordmodmail/",
+        "twitch_url": "https://twitch.tv/vioume/",
         # bot settings
         "main_category_id": None,
         "fallback_category_id": None,
@@ -77,9 +77,9 @@ class ConfigManager:
 
     private_keys = {
         # bot presence
-        "activity_message": "",
-        "activity_type": "",
-        "status": "",
+        "activity_message": "Envoie moi un message",
+        "activity_type": "Streaming",
+        "status": "Idle",
         # dm_disabled 0 = none, 1 = new threads, 2 = all threads
         # TODO: use emum
         "dm_disabled": 0,
