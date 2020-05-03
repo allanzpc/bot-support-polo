@@ -88,10 +88,10 @@ class Modmail(commands.Cog):
         )
 
         embed = discord.Embed(
-            title="Friendly Reminder",
-            description=f"You may use the `{self.bot.prefix}config set log_channel_id "
-            "<channel-id>` command to set up a custom log channel, then you can delete this default "
-            f"{log_channel.mention} log channel.",
+            title="Petit rappel",
+            description=f"Vous pouvez utiliser la commande `{self.bot.prefix}config set log_channel_id "
+            "<channel-id>` afin de changer le salon de logs. Actuellement, le salon de logs est "
+            f"{log_channel.mention} ",
             color=self.bot.main_color,
         )
 
@@ -854,8 +854,8 @@ class Modmail(commands.Cog):
         except ValueError:
             return await ctx.send(
                 embed=discord.Embed(
-                    title="Failed",
-                    description="Cannot find a message to edit.",
+                    title="Ca ne s'est pas passé comme prévu...",
+                    description="Je n'ai pas trouvé le message à éditer",
                     color=self.bot.error_color,
                 )
             )
@@ -884,7 +884,7 @@ class Modmail(commands.Cog):
 
         if user.bot:
             embed = discord.Embed(
-                color=self.bot.error_color, description="Cannot start a thread with a bot."
+                color=self.bot.error_color, description="Vous ne pouvez pas commencer de tickets avec un bot..."
             )
             return await ctx.send(embed=embed)
 
@@ -1153,8 +1153,8 @@ class Modmail(commands.Cog):
             logger.warning("Failed to delete message: %s.", e)
             return await ctx.send(
                 embed=discord.Embed(
-                    title="Failed",
-                    description="Cannot find a message to delete.",
+                    title="Ca ne s'est pas passé comme prévu...",
+                    description="Je n'ai pas trouvé le message à supprimer",
                     color=self.bot.error_color,
                 )
             )
@@ -1248,7 +1248,7 @@ class Modmail(commands.Cog):
                             color=self.bot.error_color,
                         )
                         embed.set_footer(
-                            text='Please manually delete this channel, do not use "{prefix}close".'
+                            text='Veuillez fermer manuellement ce ticket, n utilisez pas la commande "{prefix}close".'
                         )
                         try:
                             await thread.channel.send(embed=embed)
@@ -1270,7 +1270,7 @@ class Modmail(commands.Cog):
                 return await self.bot.add_reaction(ctx.message, sent_emoji)
 
             elif len(users) >= 2:
-                logger.info("Multiple users with the same name and discriminator.")
+                logger.info("Plusieurs utilisateur ont le même pseudo et le même tag")
         return await self.bot.add_reaction(ctx.message, blocked_emoji)
                                 
                        
