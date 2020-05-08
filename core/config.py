@@ -78,8 +78,8 @@ class ConfigManager:
     private_keys = {
         # bot presence
         "activity_message": "Envoie moi un message",
-        "activity_type": "Streaming",
-        "status": "Idle",
+        "activity_type": Watching,
+        "status": Idle,
         # dm_disabled 0 = none, 1 = new threads, 2 = all threads
         # TODO: use emum
         "dm_disabled": 0,
