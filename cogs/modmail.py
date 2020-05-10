@@ -33,10 +33,7 @@ class Modmail(commands.Cog):
     @checks.has_permissions(PermissionLevel.OWNER)
     async def setup(self, ctx):
         """
-        Sets up a server for Modmail.
-
-        You only need to run this command
-        once after configuring Modmail.
+        Initialiser le bot sur un serveur
         """
 
         if ctx.guild != self.bot.modmail_guild:
